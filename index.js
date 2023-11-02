@@ -3,8 +3,13 @@
 
         // CREATE TODO FUNCTION
         const createTodo = () => {
-            
-            
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your Task has been saved',
+                showConfirmButton: true,
+                timer: 3000
+              }) 
             if (!todoInput.value){
               showMessage("Todo title cannot be empty")
 
@@ -117,6 +122,7 @@
 
         // UPDATE TODO
         const handleEditMode = (id) => {
+            
           
             const todo_db = JSON.parse(localStorage.getItem(DB_NAME)) || [];
             const todo_to_update = todo_db.find((todo) => todo.id === id);
@@ -138,6 +144,13 @@
         };
 
         const updateTodo = () => {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Your Task has been updated',
+                showConfirmButton: true,
+                timer: 3000
+              }) 
            
             if (!todoInput.value){
                 const formMessageSpan = document.querySelector("#form-message");
